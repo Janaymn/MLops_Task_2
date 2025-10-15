@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 import os
 import pickle
 
@@ -12,7 +12,7 @@ X = train_df.drop(columns=['species'])
 y = train_df['species']
 
 # Train model
-model = LogisticRegression(random_state=42, max_iter=1000)
+model = RandomForestClassifier(random_state=42)
 model.fit(X, y)
 print("Model trained successfully")
 
