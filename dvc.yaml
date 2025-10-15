@@ -1,0 +1,29 @@
+stages:
+  preprocess1:
+    cmd: python preprocess1.py
+    deps:
+      - preprocess1.py
+    outs:
+      - data/train1.csv
+      - data/test1.csv
+
+  train1:
+    cmd: python train1.py
+    deps:
+      - train1.py
+      - data/train1.csv
+    outs:
+      - models/model1.pkl
+
+  validate1:
+    cmd: python validate1.py
+    deps:
+      - validate1.py
+      - models/model1.pkl
+      - data/test1.csv
+    metrics:
+      - metrics1.json:
+          cache: false
+    plots:
+      - confusion_matrix1.png:
+          cache: false
