@@ -1,0 +1,5 @@
+outs:
+- md5: 462e712947094cbbd67df51288630427
+  size: 14950
+  hash: md5
+  path: penguins1_clean.csv
